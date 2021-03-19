@@ -1,0 +1,66 @@
+{{> menu}}
+
+ <div class="col-md-9" id='content'>
+   {{#each radios}}
+   <div class="container mt-4">
+      <table class="table text-light" id="t_myvideos">
+        <thead>
+            <th>Artist</th>
+            <th>Description</th>
+            <th>Radio</th>
+            <th>
+              <div class="row">
+                  <a class="btn btn-warning btn-sm col-3" href="/myRadios/edit/{{_id}}">Edit</a>
+
+                  <form class="col-3" action="/myRadios/delete/{{_id}}?_method=DELETE" method="post">
+                    <input type='hidden' name="_method" value="DELETE">
+                    <button type='submit' class="btn btn-danger btn-sm">Delete</button>
+                  </form>
+              </div>
+            </th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{r_name}}</td>
+            <td>{{r_description}}</td>
+            <td class="float-right">
+
+              <!-- Agregar aqu? el ID de la radio -->
+              <div class="float-right">
+                <iframe src="https://tunein.com/embed/player/{{r_link}}" style="width:50%; height:100px;" scrolling="no" frameborder="no" ></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+   {{/each}}
+
+      <div class="row col-9  mt-3 mx-auto">
+      {{#if pages}}
+        <nav class="mx-auto text-center">
+          <ul class="pagination mx-auto text-center">
+                <!--first page  -->
+                <li class="page-item">
+                  <a href="/myRadios/1" class="page-link">First</a>
+                </li>
+                <!-- pages -->
+
+                  {{> r_pages}}
+                <!-- last page -->
+                <li class='page-item'>
+                    <a href="/myRadios/{{pages}}" class="page-link">Last</a>
+                </li>
+          </ul>
+        </nav>
+
+      {{/if}}
+      </div>
+
+
+
+
+ </div>
+
+ </div>
+

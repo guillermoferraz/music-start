@@ -1,0 +1,64 @@
+{{> menu}}
+
+ <div class="col-md-9" id='content'>
+   {{#each videos}}
+   <div class="container mt-4">
+     <table class="table text-light m-0 p-0" id="t_myvideos">
+        <thead>
+            <th>Artist</th>
+            <th>Song</th>
+            <th>Description</th>
+            <th>Video</th>
+            <th>
+              <div class="row">
+              <a class="btn btn-warning btn-sm col-3" href="/myVideos/edit/{{_id}}">Edit</a>
+
+              <form class="col-3" action="/myVideos/delete/{{_id}}?_method=DELETE" method="post">
+              <input type='hidden' name="_method" value="DELETE">
+              <button type='submit' class="btn btn-danger btn-sm">Delete</button>
+              </form>
+              </div>
+            </th>
+
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{v_name}}</td>
+            <td>{{v_song}}</td>
+            <td>{{v_description}}</td>
+            <td class="float-right m-0 p-0">
+
+              <!-- Agregar aqu? el ID del video -->
+              <div class="float-right m-0 p-0">
+              <iframe class="img-fluid " src="https://player.vimeo.com/video/{{v_link}}" width="240" height="160" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+   {{/each}}
+   <div class="row col-9  mt-3 mx-auto">
+      {{#if pages}}
+        <nav class="mx-auto text-center">
+          <ul class="pagination mx-auto text-center">
+                <!--first page  -->
+                <li class="page-item">
+                  <a href="/myVideos/1" class="page-link">First</a>
+                </li>
+                <!-- pages -->
+
+                  {{> v_pages}}
+                <!-- last page -->
+                <li class='page-item'>
+                    <a href="/myVideos/{{pages}}" class="page-link">Last</a>
+                </li>
+          </ul>
+        </nav>
+
+      {{/if}}
+      </div>
+
+  </div>
+ </div>
+

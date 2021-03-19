@@ -1,0 +1,30 @@
+<div class="col-md-3 mx-auto " id="content_register">
+      <div class="card" id="card_register">
+        <div class="card-header">
+          <div class="card-title text-light text-center">
+              <h4>Register</h4>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="form-group p-2">
+            <form action="/register" method="post">
+              <div id="err_register"></div>
+              <input class="form-control mt-2" type="text" id="user" name="user" placeholder="Username">
+              <input class="form-control mt-2" type="email" id="email" name="email" placeholder="Email">
+              <input class="form-control mt-2" type="email" id="c_email" name="c_email" placeholder="Confirm Email">
+              <input class="form-control mt-2" type="password" id="password" name="password" placeholder="Password">
+              <input class="form-control mt-2" type="password" id="c_password" name="c_password" placeholder="Confirm Password">
+              <div class="row">
+                <div class="col-md-3">
+                  <input class="btn btn-primary mt-2" onclick="return validate_register();"  type="submit" id="btn_register" value="Register">
+                </div>
+                <div class="float-right mt-2">
+                  <a class="text-warning text-decoration-none" href="#" id="login">Create Account</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+

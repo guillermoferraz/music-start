@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="container col-md-3 bg-dark text-light shadow shadow-lg" id="menu">
+    <div class="container">
+      <div class="mx-auto text-center mt-4">
+       <div id="btn-up-avatar" class='col-3' >
+         <div class="row">
+            {{#each avatar}}
+              <form class="col-5" action="/avatar/delete/{{_id}}?_method=DELETE" method="post">
+                <input type="hidden" name="method" value="DELETE"></input>
+                <button type="submit" class="col-5 bg-transparent border border-dark text-warning" title="Change Your avatar"><i id="change-avatar" class="fas fa-redo-alt"></i></button>
+                </form>
+              {{/each}}
+              <a class="col-5 " href="/create-avatar" title="Upload Your avatar"><i id="camera" class="fas fa-camera"></i></a>
+
+
+         </div>
+       </div>
+       {{#each avatar}}
+       <div id="avatar">
+         <img src="{{path}}" class="img-fluid img-thumbnail rounded-circle" width="200" />
+         <div id="alias" class="text-center p-2 ">
+           <strong>{{alias}}</strong>
+         </div>
+         </div>
+   {{/each}}
+
+      </div>
+      <div class="text-center p-3">
+        <strong></strong>
+      </div>
+
+      <div class="p-3 d-grid gap-2">
+        <a id="btn-v-up" class="btn btn-info m-2" href="/home">Home</a>
+        <a id="btn-my-v" class="btn btn-info m-2" href="/myVideos/pages">My videos</a>
+        <a id="btn-my-r" class="btn btn-info m-2" href="/myRadios/pages">My Radios</a>
+        <a id="btn-full" class="btn btn-info m-2" href="https://tunein.com/radio/home/" target="_blank">Search Tunein radios</a>
+        <a id="btn-full" class="btn btn-info m-2" href="https://vimeo.com/search" target="_blank">Search Vimeo videos</a>
+      </div>
+
+    </div>
+  </div>
+
+

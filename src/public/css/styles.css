@@ -1,0 +1,75 @@
+#body {
+  padding: 0;
+  margin: 0;
+}
+
+#app{
+  padding: 0;
+  margin: 0;
+}
+
+#menu{
+  height: 100vh;
+  padding:0;
+  margin:0;
+}
+#content{
+  background-image: url('/assets/music.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+#card-welcome{
+  margin-top: 25%;
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 20px;
+  font-size: 20px;
+}
+#card-upload{
+  background-color: rgba(0,0,0,0.8);
+  margin-top: 15%;
+}
+code{
+font-weight: bold;
+font-size: 14px;
+}
+#t_myvideos{
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 20px;
+}
+#index{
+  background-image: url('/assets/music.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100vw 100vh;
+  width: 100vw;
+  height: 100vh;
+}
+#content_login{
+  margin-top: 10%;
+
+}
+#card_login{
+  background-color: rgba(0,0,0,0.8);
+
+}
+#content_register{
+  margin-top: 10%;
+
+}
+#card_register{
+  background-color: rgba(0,0,0,0.8);
+
+}
+#card_avatar{
+  background-color: rgba(0,0,0,0.8);
+  margin-top: 10%;
+}
+#camera{
+  font-size: 25px;
+}
+#change-avatar{
+  font-size: 25px;
+}
+
+

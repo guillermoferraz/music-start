@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="container col-md-3 bg-dark text-light shadow shadow-lg" id="menu">
+    <div class="container">
+      <div class="mx-auto text-center mt-4">
+        <img src="https://toppng.com/uploads/preview/cool-avatar-transparent-image-cool-boy-avatar-11562893383qsirclznyw.png" class="img-fluid img-thumbnail rounded-circle" width="200" />
+      </div>
+      <div class="text-center p-2">
+          <strong>Alias</strong>
+      </div>
+
+      <div class="p-2 d-grid gap-2">
+        <a id="btn-v-up" class="btn btn-info m-2">Upload video</a>
+        <a id="btn-r-up" class="btn btn-info m-2">Upload Radio</a>
+        <a id="btn-my-v" class="btn btn-info m-2" href="/myVideos/pages">My videos</a>
+        <a id="btn-my-r" class="btn btn-info m-2" href="/myRadios/pages">My Radios</a>
+        <a id="btn-full" class="btn btn-info m-2" href="https://tunein.com/radio/home/" target="_blank">Search Tunein radios</a>
+        <a id="btn-full" class="btn btn-info m-2" href="https://vimeo.com/search" target="_blank">Search Vimeo videos</a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-md-9" id='content'>
+
+    <div>
+      <a href="/logout" class="text-decoration-none btn btn-info mt-2" style="margin-left: 93%;">Exit</a>
+    </div>
+
+
+  <!--Upload video form -->
+  <div id="edit-video">
+
+        <!-- alert succes -->
+
+          <div id="msg_suc" class='col-md-4 mx-auto mt-4 p-3 position-absolute' style="z-index: 100; right: 5%; top:5%"></div>
+
+
+       <div id="card-upload" class="card col-md-7 mx-auto">
+
+          <div class='card-header text-center text-light'>
+            <div class='card-title'>
+              <h4>Upload video</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <form action="/myVideos/edit/{{video._id}}?_method=PUT" method="post">
+                <input type='hidden' name="_method" value="PUT">
+              <div class="form-group p-3">
+
+              <!-- messages -->
+
+                <div id='msg_err'>
+                </div>
+
+                <input value="{{video.v_link}}" class="form-control mt-2" type="text" id="v_link" name="v_link" placeholder="Enter only the number Example: 8366537">
+                <small class="text-light">ex: https://vimeo.com/<code>8366537</code></small>
+              </div>
+
+              <div class="form-group p-3">
+                <input value="{{video.v_name}}" class="form-control" type="text" id="v_name" name="v_name" placeholder="Artist name">
+              </div>
+
+              <div class="form-group p-3">
+                <input value="{{video.v_song}}" class="form-control" type="text" id="v_song" name="v_song" placeholder="Name of the song">
+              </div>
+
+              <div class="form-group p-3">
+                <input value="{{video.v_description}}" class="form-control" type="text" id="v_description" name="v_description" placeholder="Short description (optional)">
+              </div>
+
+              <div class="form-group p-3">
+                <input type="submit" id="btn_up_video" onclick="return validate_video()" class="btn btn-primary col-3" value="Edit">
+                <button id='btn-back' class="btn btn-primary col-3" >Back</button>
+              </div>
+            </form>
+          </div>
+        </div>
+     </div>
+  </div>
+</div>
