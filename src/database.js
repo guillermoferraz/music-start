@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://guillermo:hacker190490@cluster0.ks08x.mongodb.net/MusicStart?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://localhost/MusicStart', {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
